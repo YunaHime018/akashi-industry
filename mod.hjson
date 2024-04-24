@@ -1,0 +1,8 @@
+displayName: "赤石工業 DEV"
+name: "proty"
+author: "赤石 ゆな / Yuna Akashi"
+main: "proty.AIndusMod"
+description: "For Mindustry v7 or higher. It's Ver.DEV.BETA."
+version: DEV.0.5
+minGameVersion: 145
+java: true
