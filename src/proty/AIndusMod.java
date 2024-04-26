@@ -14,7 +14,7 @@ public class AIndusMod extends Mod {
     public static final String MOD_RELEASES = "https://github.com/yuna-akashi/AIndusMod/releases";
     public static final String MOD_REPO = "yuna-akashi/AIndusMod";
     public static final String MOD_GITHUB_URL = "https://github.com/yuna-akashi/AIndusMod";
-    public static final String MOD_NAME = "protyBeta";
+    public static final String MOD_NAME = "proty-beta";
 
     public static Mods.LoadedMod MOD;
 
@@ -31,7 +31,7 @@ public class AIndusMod extends Mod {
             Time.runTask(10f, () -> {
                 BaseDialog dialogMain = new BaseDialog("MOD LOADED");
                 dialogMain.cont.add("赤石工業").row();
-                dialogMain.cont.image(Core.atlas.find("protyBeta-icon2")).pad(20f).row();
+                dialogMain.cont.image(Core.atlas.find("proty-beta-icon2")).pad(20f).row();
                 dialogMain.cont.add("This mod's language is Japanese. Also support zh_TW.").row();
                 dialogMain.cont.add().row();
                 dialogMain.cont.add("IMPORTANT").row();

@@ -19,7 +19,7 @@ public class AIItems extends Items {
      */
 
     public static Item
-            yunametal,
+            metal, yunametal,
             processor, super_processor, yuna_core,
             uranium, plutonium, depleted_uranium,
             nuke_bullet, nuke, du_ammo, matter, antimatter;
@@ -43,6 +43,9 @@ public class AIItems extends Items {
         }};//Done
         /*--------------------*/
         /*----------main----------*/
+        metal = new Item("metal", Color.valueOf("7b7b7b")){{
+            buildable = false;
+        }};
         yunametal = new Item("yunametal", AIColorPalette.baseMainColor) {{
             cost = 4;
             healthScaling = 1.32f;
@@ -73,7 +76,7 @@ public class AIItems extends Items {
                 tungastano
         );
         proty_items_main.addAll(
-                yunametal, processor, super_processor, yuna_core, uranium, plutonium, depleted_uranium, nuke_bullet, nuke, du_ammo, matter, antimatter
+                metal, yunametal, processor, super_processor, yuna_core, uranium, plutonium, depleted_uranium, nuke_bullet, nuke, du_ammo, matter, antimatter
         );
         erekirOnlyItems.addAll(proty_items_erekir).removeAll(proty_items_serpulo);
     }

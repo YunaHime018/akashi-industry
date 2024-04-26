@@ -21,30 +21,31 @@ public class AIBlocks extends Blocks {
     //TODO ベースは追加しても良いが、一つずつ完成してから追加する。
     //TODO 各惑星を構成する要素を確定させる。→どんな地質なのか、どんな建造物があるのかなど。
     public static Block
-            ruined_wall, static_unit, ancient_wall_unit;
+            ruined_wall, static_unit, ancient_wall_unit,
+            metal_ore;
     /**
      * 惑星を構成するブロック類
      */
     public static Block
             titanium_a_wall, titanium_a_wall_large,
-            titanium_a_smelter;
+            titanium_a_smelter, metal_smelter;
     /**
      * セルプロ用のブロック。
      */
 
     public static Block
             tungastano_wall, tungastano_wall_large,
-            tungastano_smelter;
+            tungastano_smelter, metal_arc_smelter;
     /**
      * エレキル用のブロック。
      */
 
     public static Block
             /*-----Region Wall-----------*/
-            super_wall, super_wall_armored,
+            ym_wall, ym_wall_l, super_wall, super_wall_armored,
 
             /*-----Region Factory--------*/
-            yunametal_generator, yunametal_generator_advanced, processor_factory, y_processor_factory,
+            metal_melter, yunametal_generator, yunametal_generator_advanced, processor_factory, y_processor_factory,
             deuterium_chamber, tritium_chamber,
 
             /*-----region CoreBlocks-----*/
@@ -77,12 +78,24 @@ public class AIBlocks extends Blocks {
         }};//Done
         //erekir
         //main
+        ym_wall = new Wall("yunametal-wall"){{
+            size = 1;
+            health = size * size * (BHP+180) * wallHPMultiplier;
+
+            requirements(Category.defense, with(yunametal, 8));
+        }};
+        ym_wall_l = new Wall("yunametal-wall-large"){{
+            size = 2;
+            health = size * size * (BHP+180) * wallHPMultiplier;
+
+            requirements(Category.defense, with(yunametal, 32));
+        }};
         super_wall = new Wall("super-wall") {{
             size = 2;
             health = size * size * (BHP + 480) * wallHPMultiplier * armorHPMultiplier;
             armor = 200;
 
-            requirements(Category.defense, BuildVisibility.hidden, with(matter, 32));
+            requirements(Category.defense, with(matter, 32));
         }};//Done
         /*-----End Region-----*/
 
@@ -132,6 +145,7 @@ public class AIBlocks extends Blocks {
 
             consumePower(10);
             consumeItems(with(Items.surgeAlloy, 3, Items.graphite, 1));
+            consumeLiquids(LiquidStack.with(Liquids.water, 20));
             outputItems = with(yunametal, 1);
             craftTime = 3.33f * 60f;
 
